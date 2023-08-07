@@ -73,6 +73,12 @@ export type QueryGet_ShareholderArgs = {
 };
 
 
+export type QueryGet_ShareholdersArgs = {
+  cursor: InputMaybe<Scalars['String']['input']>;
+  page_size: Scalars['Int']['input'];
+};
+
+
 export type QueryGet_TransfersArgs = {
   shareholder_id: Scalars['String']['input'];
 };
@@ -148,7 +154,10 @@ export type GetShareholderQueryVariables = Exact<{
 
 export type GetShareholderQuery = { readonly __typename: 'Query', readonly get_shareholder: { readonly __typename: 'Shareholder', readonly id: string, readonly first_name: string, readonly last_name: string, readonly movie: { readonly __typename: 'Movie', readonly title: string } } };
 
-export type GetShareholdersQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetShareholdersQueryVariables = Exact<{
+  page_size: Scalars['Int']['input'];
+  cursor: InputMaybe<Scalars['String']['input']>;
+}>;
 
 
 export type GetShareholdersQuery = { readonly __typename: 'Query', readonly get_shareholders: ReadonlyArray<{ readonly __typename: 'Shareholder', readonly id: string, readonly first_name: string, readonly last_name: string } | undefined> };
@@ -311,8 +320,8 @@ export type GetShareholderQueryHookResult = ReturnType<typeof useGetShareholderQ
 export type GetShareholderLazyQueryHookResult = ReturnType<typeof useGetShareholderLazyQuery>;
 export type GetShareholderQueryResult = ApolloReactCommon.QueryResult<GetShareholderQuery, GetShareholderQueryVariables>;
 export const GetShareholdersDocument = /*#__PURE__*/ gql`
-    query GetShareholders {
-  get_shareholders {
+    query GetShareholders($page_size: Int!, $cursor: String) {
+  get_shareholders(page_size: $page_size, cursor: $cursor) {
     id
     first_name
     last_name
@@ -332,10 +341,12 @@ export const GetShareholdersDocument = /*#__PURE__*/ gql`
  * @example
  * const { data, loading, error } = useGetShareholdersQuery({
  *   variables: {
+ *      page_size: // value for 'page_size'
+ *      cursor: // value for 'cursor'
  *   },
  * });
  */
-export function useGetShareholdersQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetShareholdersQuery, GetShareholdersQueryVariables>) {
+export function useGetShareholdersQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetShareholdersQuery, GetShareholdersQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
         return ApolloReactHooks.useQuery<GetShareholdersQuery, GetShareholdersQueryVariables>(GetShareholdersDocument, options);
       }

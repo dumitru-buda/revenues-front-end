@@ -31,7 +31,8 @@ const StyledName = styled.h3`
 
 const Wallet = () => {
   const { pathname } = useLocation()
-  const shareholderId = pathname.split("/").pop() || ""
+  const path = pathname.split("/")
+  const shareholderId = path[path.length - 1] || ""
 
   const { data, loading, error } = useGetTransfersQuery({
     variables: { shareholder_id: shareholderId },

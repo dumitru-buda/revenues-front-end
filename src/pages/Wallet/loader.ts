@@ -6,7 +6,7 @@ import { GetTransfersDocument } from "../../graphql/generated"
 // and then use the query hook with cache only policy
 // https://community.apollographql.com/t/how-to-load-data-with-react-router-dom-v6-and-handling-errorpage/5347/3#:~:text=setting%20up%20a-,useQuery,-hook%20in%20your
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  await client.query({
+  client.query({
     query: GetTransfersDocument,
     variables: { shareholder_id: params.shareholderId },
   })

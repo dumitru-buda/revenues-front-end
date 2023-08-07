@@ -14,8 +14,7 @@ interface Props {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  max-width: 320px;
-  flex: 1;
+  width: 320px;
 `
 
 const AdminSection = ({

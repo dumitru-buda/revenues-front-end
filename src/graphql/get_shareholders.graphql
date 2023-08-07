@@ -1,5 +1,5 @@
-query GetShareholders($skip: Int!, $take: Int!) {
-  get_shareholders(skip: $skip, take: $take) {
+query GetShareholders($page_size: Int!, $cursor: String) {
+  get_shareholders(page_size: $page_size, cursor: $cursor) {
     id
     first_name
     last_name

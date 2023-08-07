@@ -39,7 +39,7 @@ const Header = () => {
     <StyledNav>
       <RouteLInk route="/">
         <StyledLogo>
-          <FilmChainLogo />
+          <FilmChainLogo width="100%" height="100%" />
         </StyledLogo>
       </RouteLInk>
 
