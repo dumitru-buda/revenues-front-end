@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
-        path: "wallets",
+        path: "shareholders",
         element: <Shareholders />,
       },
       {

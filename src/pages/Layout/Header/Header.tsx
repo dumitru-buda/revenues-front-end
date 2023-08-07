@@ -44,7 +44,7 @@ const Header = () => {
       </RouteLInk>
 
       <StyledLeftContainer>
-        <Link to="/wallets" style={linkStyle}>
+        <Link to="/shareholders" style={linkStyle}>
           <Button buttonType="secondary">Shareholders</Button>
         </Link>
         <Link to="/admin" style={linkStyle}>
