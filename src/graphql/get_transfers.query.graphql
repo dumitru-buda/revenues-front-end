@@ -1,0 +1,17 @@
+query GetTransfers($shareholder_id: String!) {
+  get_transfers(shareholder_id: $shareholder_id) {
+    balance {
+      value
+      currency
+    }
+    transfers {
+      movie_id
+      amount
+      currency
+      description
+      movie {
+        title
+      }
+    }
+  }
+}

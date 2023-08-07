@@ -1,0 +1,14 @@
+mutation CreateTransfer(
+  $amount: Float!
+  $description: String!
+  $movie_id: String!
+) {
+  create_transfer(
+    amount: $amount
+    description: $description
+    movie_id: $movie_id
+  ) {
+    success
+    error_message
+  }
+}

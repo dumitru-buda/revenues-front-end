@@ -1,0 +1,10 @@
+query GetShareholder($shareholder_id: String!) {
+  get_shareholder(shareholder_id: $shareholder_id) {
+    id
+    first_name
+    last_name
+    movie {
+      title
+    }
+  }
+}

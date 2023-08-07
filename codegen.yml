@@ -1,0 +1,28 @@
+schema: http://localhost:4000
+documents: "./src/**/*.graphql"
+generates:
+  ./src/graphql/generated.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withComponent: false
+      withHooks: true
+      withHOC: false
+      avoidOptionals:
+        field: true
+        inputValue: false
+        object: true
+        defaultValue: true
+      immutableTypes: true
+      preResolveTypes: true
+      pureMagicComment: true
+      maybeValue: T | undefined
+      identifierName: Operations
+      nonOptionalTypename: true
+      scalars:
+        DateTime: Date
+        Date: unknown
+      apolloReactHooksImportFrom: "@apollo/client"
+      apolloReactCommonImportFrom: "@apollo/client"

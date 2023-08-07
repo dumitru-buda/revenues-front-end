@@ -1,0 +1,6 @@
+mutation CreateMovie($title: String!) {
+  create_movie(title: $title) {
+    success
+    error_message
+  }
+}

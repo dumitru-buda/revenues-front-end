@@ -1,0 +1,6 @@
+query GetMovies {
+  get_movies {
+    id
+    title
+  }
+}

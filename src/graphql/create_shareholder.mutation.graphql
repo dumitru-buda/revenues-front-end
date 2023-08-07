@@ -1,0 +1,6 @@
+mutation CreateShareholder($data: ShareholderInput!) {
+  create_shareholder(data: $data) {
+    success
+    error_message
+  }
+}
