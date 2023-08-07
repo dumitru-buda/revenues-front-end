@@ -3,4 +3,4 @@
 ## Quick Start
 
 1. `npm i`
-2. `bundle install`
+2. `npm run dev`
