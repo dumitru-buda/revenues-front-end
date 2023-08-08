@@ -79,10 +79,6 @@ const Shareholders = () => {
         </Fragment>
       ))}
       <Spacer height="20px" />
-      <i>
-        *Thought I would add some pagination, but for some reason last element
-        from previous query is duplicated. No time to debug.
-      </i>
       <Spacer height="30px" />
       <Button disabled={allFieldsDisplayed || loading} onClick={loadNextPage}>
         Load more...
